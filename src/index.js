@@ -34,7 +34,7 @@ app.use(session({
     },
 }));
 
-app.use('/', pageRouter);
+app.use ('/', pageRouter);
 
 app.use((req, res, next) => {
     const error = new Error(`No router for ${req.method} ${req.url}`);
