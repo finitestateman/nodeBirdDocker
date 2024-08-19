@@ -23,5 +23,8 @@ module.exports = class Post extends Sequelize.Model {
         });
     }
 
-    static associate(db) {}
+    static associate(db) {
+        db.Post.belongsTo(db.User);
+        db.Post.belongsTo(db.Hashtag, { through: 'PostHashtag' });
+    }
 };
