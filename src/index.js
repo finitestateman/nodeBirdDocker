@@ -8,6 +8,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 const pageRouter = require('./routes/page');
+const { sequelize } = require('./models');
 
 const app = express();
 
@@ -18,6 +19,14 @@ nunjucks.configure('src/views', {
     express: app,
     watch: true
 });
+
+sequelize.sync({ force: false })
+    .then(() => {
+        console.log('Connected to Database');
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
