@@ -1,9 +1,8 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 
-
 export default [
-    {files: ['**/*.js'], languageOptions: {sourceType: 'commonjs'}},
+    {files: ['src/**/*.js'], languageOptions: {sourceType: 'commonjs'}},
     {languageOptions: { globals: {...globals.browser, ...globals.node} }},
     pluginJs.configs.recommended,
     {
@@ -25,7 +24,7 @@ export default [
             'func-names': ['error', 'as-needed'],
 
             'curly': ['error', 'all'],
-            'no-multiple-empty-lines': ['error', { 'max': 2 }],
+            'no-multiple-empty-lines': ['error', { 'max': 1 }],
             'camelcase': ['error', { 'properties': 'never' }],
             'arrow-body-style': ['error', 'as-needed'],
             'capitalized-comments': ['error'],
@@ -61,7 +60,11 @@ export default [
             // 'prefer-promise-reject-errors': 'error',
             'prefer-rest-params': 'error',
             'prefer-spread': 'error',
-            'require-await': 'error'
+            'require-await': 'error',
+            'object-curly-spacing': ['error', 'always'],
+            'keyword-spacing': 'error',
+            // 'space-before-function': 'error',
+            'space-infix-ops': 'error'
         }
     }
 ];
