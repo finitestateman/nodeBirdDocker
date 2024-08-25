@@ -27,7 +27,7 @@ export default [
             'no-multiple-empty-lines': ['error', { 'max': 1 }],
             'camelcase': ['error', { 'properties': 'never' }],
             'arrow-body-style': ['error', 'as-needed'],
-            'capitalized-comments': ['error'],
+            // 'capitalized-comments': ['error'],
             'class-methods-use-this': 'error',
             'consistent-return': 'error',
             'consistent-this': ['error', 'that'],
